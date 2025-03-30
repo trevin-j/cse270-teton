@@ -13,7 +13,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 
 class TestSmokeTest:
     def setup_method(self, method):
-        options = FirefoxOptions()
+        options = webdriver.FirefoxOptions()
         options.add_argument("--headless=new")
         self.driver = webdriver.Firefox(options=options)
         self.vars = {}
