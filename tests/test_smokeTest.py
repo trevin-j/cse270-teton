@@ -10,14 +10,15 @@ from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.chrome.options import Options
 
 class TestSmokeTest:
     def setup_method(self, method):
-        options = webdriver.FirefoxOptions()
+        options = Options()
         options.add_argument("--headless=new")
-        self.driver = webdriver.Firefox(options=options)
+        self.driver = webdriver.Chrome(options=options)
         self.vars = {}
-
+        
     def teardown_method(self, method):
         self.driver.quit()
 
